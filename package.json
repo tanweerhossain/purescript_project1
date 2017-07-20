@@ -1,8 +1,8 @@
 {
-	"name" : "Project1",
+	"name" : "purescript_project1",
 	"private" : true ,
 	"scripts" : {
-		"start": "google-chrome-stable --watch ./dist/index.html;pulp --watch build",
+		"start": "pulp --watch build -O --to output.js",
 		"start-psc" : ""
 	} ,
 	"dependencies" : {
