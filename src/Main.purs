@@ -4,7 +4,7 @@ import Prelude
 import Control.Monad.Eff.Console (log)
 import Math (sqrt,pi)
 import Data.List
-import Data.AddressBook (_add,sum)
+import Data.AddressBook
 
 --main :: forall e. Eff (console :: CONSOLE | e) Unit
   --  add :: Int -> Int -> Int 

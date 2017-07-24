@@ -47,14 +47,16 @@ var PS = {};
   "use strict";
   var Control_Plus = PS["Control.Plus"];
   var Data_List = PS["Data.List"];
+  var Data_List_Types = PS["Data.List.Types"];
   var Data_Maybe = PS["Data.Maybe"];
+  var Data_Semigroup = PS["Data.Semigroup"];
   var Data_Semiring = PS["Data.Semiring"];
   var Prelude = PS["Prelude"];        
   var sum = function (x) {
       return function (y) {
           return x + y;
       };
-  };
+  };                                                           
   var _add = function (x) {
       return function (y) {
           var output = x + y;
