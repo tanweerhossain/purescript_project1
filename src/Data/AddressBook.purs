@@ -33,6 +33,8 @@ showEntry entry = do
    entry.lastName <> ", " <> 
    entry.firstName <> ": " <> 
    showAddress entry.address
+printEntry :: String -> String -> AddressBook -> Maybe String
+printEntry firstName lastName book = map showEntry (findEntry firstName lastName book)
    
 showAddress :: Address -> String
 showAddress addr = do
@@ -45,3 +47,10 @@ emptyBook = empty
 
 insertEntry :: Entry -> AddressBook -> AddressBook
 insertEntry = Cons
+
+
+findEntry :: String -> String -> AddressBook -> Maybe Entry
+findEntry firstName lastName book = head $ filter filterEntry book
+  where
+    filterEntry :: Entry -> Boolean
+    filterEntry entry = entry.firstName == firstName && entry.lastName == lastName
