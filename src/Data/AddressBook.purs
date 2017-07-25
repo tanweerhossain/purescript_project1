@@ -4,6 +4,7 @@ module Data.AddressBook where
 import Prelude
 import Control.Plus (empty)
 import Data.List (List(..), filter, head)
+import Data.List
 import Data.Maybe (Maybe)
 
 
@@ -43,3 +44,4 @@ emptyBook :: AddressBook
 emptyBook = empty
 
 insertEntry :: Entry -> AddressBook -> AddressBook
+insertEntry = Cons
