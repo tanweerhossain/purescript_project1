@@ -51,10 +51,12 @@ var PS = {};
   var Data_Functor = PS["Data.Functor"];
   var Data_HeytingAlgebra = PS["Data.HeytingAlgebra"];
   var Data_List = PS["Data.List"];
+  var Data_List_Partial = PS["Data.List.Partial"];
   var Data_List_Types = PS["Data.List.Types"];
   var Data_Maybe = PS["Data.Maybe"];
   var Data_Semigroup = PS["Data.Semigroup"];
   var Data_Semiring = PS["Data.Semiring"];
+  var Partial_Unsafe = PS["Partial.Unsafe"];
   var Prelude = PS["Prelude"];        
   var sum = function (x) {
       return function (y) {

@@ -6,6 +6,8 @@ import Control.Plus (empty)
 import Data.List (List(..), filter, head)
 import Data.List
 import Data.Maybe (Maybe)
+import Partial.Unsafe (unsafePartial)
+import Data.List.Partial (tail)
 
 
 type Address ={
@@ -27,6 +29,10 @@ _add x y =  output
 
 sum :: Number -> Number -> Number
 sum = \x y -> x + y
+
+length :: forall a. List a -> Int
+length arr = do 
+  if null arr then 0 else 1 + length (unsafePartial tail arr)
 
 showEntry :: Entry -> String
 showEntry entry = do
