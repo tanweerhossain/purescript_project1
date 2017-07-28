@@ -8,6 +8,9 @@ import Data.List
 import Data.Maybe (Maybe)
 import Partial.Unsafe (unsafePartial)
 import Data.List.Partial (tail)
+import Data.Int
+import Math
+
 
 
 type Address ={
@@ -30,9 +33,14 @@ _add x y =  output
 sum :: Number -> Number -> Number
 sum = \x y -> x + y
 
-length :: forall a. List a -> Int
-length arr = do 
-  if null arr then 0 else 1 + length (unsafePartial tail arr)
+lengthEntry :: forall a. List a -> Int
+lengthEntry arr = do 
+  if null arr then 0 else 1 + lengthEntry (unsafePartial tail arr)
+  
+f1 :: List Int -> Int
+f1 list = do
+  length $ filter (\x -> (remainder (toNumber x) 2.0) == 0.0) list  
+  
 
 showEntry :: Entry -> String
 showEntry entry = do
@@ -40,7 +48,7 @@ showEntry entry = do
    entry.lastName <> ": " <> 
    showAddress entry.address
 printEntry :: String -> String -> AddressBook -> Maybe String
-printEntry firstName lastName book = map showEntry (findEntry firstName lastName book)
+printEntry firstName lastName book = showEntry <$> (findEntry firstName lastName book)
    
 printEntryByAddress :: Address -> AddressBook -> Maybe String
 printEntryByAddress address book = map showEntry $ findEntryByAddress address book
