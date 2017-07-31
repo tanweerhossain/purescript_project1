@@ -40,14 +40,14 @@ f1 :: List Int -> Int
 f1 list = do
   length $ filter (\x -> (mod x 2) == 0) list  
   
-factors :: Int -> Array (Array Int)
-factors n = filter (\xs -> product xs == n) $ do
-  i <- 1 .. n
-  j <- i .. n
-  pure [i, j]
-  
-product :: Array Int -> Int
-product a = (fromMaybe $ a!!0)*(fromMaybe $ a!!1)
+-- factors :: Int -> Array (Array Int)
+-- factors n = filter (\xs -> product xs == n) $ do
+--   i <- 1 .. n
+--   j <- i .. n
+--   pure [i, j]
+--   
+-- product :: Array Int -> Int
+-- product a = (fromMaybe $ a!!0)*(fromMaybe $ a!!1)
 
 showEntry :: Entry -> String
 showEntry entry = do
